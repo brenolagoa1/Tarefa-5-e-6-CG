@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Tarefa 5 e 6 CG: C√≥digo-Fonte de Camera.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Tarefa 5 e 6 CG<span id="projectnumber">&#160;v1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('_camera_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Camera.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef CAMERA_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define CAMERA_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;Ray.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;Color.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;CImg.h&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;omp.h&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="matvec_8h.html">matvec.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;objeto.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;Triangulo.h&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;Interval.h&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;hittable.h&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;material.h&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="foldopen" id="foldopen00025" data-start="{" data-end="};">
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classcamera.html">   25</a></span><span class="keyword">class </span><a class="code hl_class" href="classcamera.html">camera</a> {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classcamera.html#aa39de6d0d8301f42db272036e3ce0fb9">   30</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="classcamera.html#aa39de6d0d8301f42db272036e3ce0fb9">aspect_ratio</a>;  </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classcamera.html#a86b96b9111783e1b5e6c24ff4912d958">   35</a></span>    <span class="keywordtype">int</span>    <a class="code hl_variable" href="classcamera.html#a86b96b9111783e1b5e6c24ff4912d958">image_width</a>;  </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classcamera.html#a16bd0b9cbc703e572b2f0976829c97bb">   40</a></span>    <span class="keywordtype">int</span>    <a class="code hl_variable" href="classcamera.html#a16bd0b9cbc703e572b2f0976829c97bb">samples_per_pixel</a>; </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classcamera.html#a513e0f8d75fcae459492e3b684ea6330">   45</a></span>    <span class="keywordtype">int</span>    <a class="code hl_variable" href="classcamera.html#a513e0f8d75fcae459492e3b684ea6330">max_depth</a>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classcamera.html#ae0cd3560962c14125194fe750d4a6069">   50</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="classcamera.html#ae0cd3560962c14125194fe750d4a6069">vfov</a>; </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classcamera.html#a3a037bbf9dc638e9a8ae4a279ccd00be">   55</a></span>    <a class="code hl_class" href="classvec3.html">vec3</a> <a class="code hl_variable" href="classcamera.html#a3a037bbf9dc638e9a8ae4a279ccd00be">lookfrom</a>; </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classcamera.html#ae590ffc93d9a16e5e8fd8de6b65ead6c">   60</a></span>    <a class="code hl_class" href="classvec3.html">vec3</a> <a class="code hl_variable" href="classcamera.html#ae590ffc93d9a16e5e8fd8de6b65ead6c">lookat</a>; </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classcamera.html#a57073c102fb3fb3f1777ce3663ed1c96">   65</a></span>    <a class="code hl_class" href="classvec3.html">vec3</a> <a class="code hl_variable" href="classcamera.html#a57073c102fb3fb3f1777ce3663ed1c96">vup</a>; </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="foldopen" id="foldopen00072" data-start="{" data-end="}">
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="classcamera.html#a7d29d0700daf7faddaa75437d96fa59f">   72</a></span>    <a class="code hl_struct" href="structcimg__library_1_1_c_img.html">cimg_library::CImg&lt;unsigned char&gt;</a> <a class="code hl_function" href="classcamera.html#a7d29d0700daf7faddaa75437d96fa59f">render</a>(<span class="keyword">const</span> <a class="code hl_class" href="classhittable.html">hittable</a>&amp; world) {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        initialize();</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <a class="code hl_struct" href="structcimg__library_1_1_c_img.html">cimg_library::CImg&lt;unsigned char&gt;</a> imagem(<a class="code hl_variable" href="classcamera.html#a86b96b9111783e1b5e6c24ff4912d958">image_width</a>, image_height, 1, 3, 255);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keyword">const</span> <span class="keywordtype">int</span> tile_size = 16;  <span class="comment">// Tamanho do bloco para processamento</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; image_height; ++j) {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="classcamera.html#a86b96b9111783e1b5e6c24ff4912d958">image_width</a>; ++i) {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                <a class="code hl_class" href="classvec3.html">color</a> pixel_color(0, 0, 0);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> sample = 0; sample &lt; <a class="code hl_variable" href="classcamera.html#a16bd0b9cbc703e572b2f0976829c97bb">samples_per_pixel</a>; ++sample) {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                    <a class="code hl_class" href="class_ray.html">Ray</a> r = get_ray(i, j);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                    pixel_color = pixel_color + ray_color(r, <a class="code hl_variable" href="classcamera.html#a513e0f8d75fcae459492e3b684ea6330">max_depth</a>, world);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                <a class="code hl_class" href="classvec3.html">color</a> color_aux = write_color(pixel_color, <a class="code hl_variable" href="classcamera.html#a16bd0b9cbc703e572b2f0976829c97bb">samples_per_pixel</a>);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> cor[3] = { <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(255.999 * color_aux.x),</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                                         <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(255.999 * color_aux.y),</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                                         <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(255.999 * color_aux.z) };</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                imagem.<a class="code hl_function" href="structcimg__library_1_1_c_img.html#ab85a8e52d50bec4e92e13a0b60f5ea78">draw_point</a>(i, j, 0, cor);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            }</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        }</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        std::clog &lt;&lt; <span class="stringliteral">&quot;\rDone.                 \n&quot;</span>;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keywordflow">return</span> imagem;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    }</div>
+</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordtype">int</span>    image_height;   </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <a class="code hl_class" href="classvec3.html">vec3</a> center;         </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <a class="code hl_class" href="classvec3.html">vec3</a> pixel00_loc;   </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <a class="code hl_class" href="classvec3.html">vec3</a>   pixel_delta_u;  </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <a class="code hl_class" href="classvec3.html">vec3</a>   pixel_delta_v;  </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <a class="code hl_class" href="classvec3.html">vec3</a>   w, u, v;        </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="keywordtype">void</span> initialize() {</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        image_height = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="classcamera.html#a86b96b9111783e1b5e6c24ff4912d958">image_width</a> / <a class="code hl_variable" href="classcamera.html#aa39de6d0d8301f42db272036e3ce0fb9">aspect_ratio</a>);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        image_height = (image_height &lt; 1) ? 1 : image_height;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        center = <a class="code hl_variable" href="classcamera.html#a3a037bbf9dc638e9a8ae4a279ccd00be">lookfrom</a>;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        <span class="keyword">auto</span> focal_length = (<a class="code hl_variable" href="classcamera.html#a3a037bbf9dc638e9a8ae4a279ccd00be">lookfrom</a> - <a class="code hl_variable" href="classcamera.html#ae590ffc93d9a16e5e8fd8de6b65ead6c">lookat</a>).length();</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        <span class="keyword">auto</span> theta = degrees_to_radians(<a class="code hl_variable" href="classcamera.html#ae0cd3560962c14125194fe750d4a6069">vfov</a>);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        <span class="keyword">auto</span> h = tan(theta / 2);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        <span class="keyword">auto</span> viewport_height = 2.0 * h * focal_length;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        <span class="keyword">auto</span> viewport_width = viewport_height * (<span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="classcamera.html#a86b96b9111783e1b5e6c24ff4912d958">image_width</a>) / image_height);</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        w = unit_vector(<a class="code hl_variable" href="classcamera.html#a3a037bbf9dc638e9a8ae4a279ccd00be">lookfrom</a> - <a class="code hl_variable" href="classcamera.html#ae590ffc93d9a16e5e8fd8de6b65ead6c">lookat</a>);</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        u = unit_vector(cross(<a class="code hl_variable" href="classcamera.html#a57073c102fb3fb3f1777ce3663ed1c96">vup</a>, w));</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        v = cross(w, u);</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        <span class="keyword">auto</span> viewport_u = viewport_width * u; </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        <span class="keyword">auto</span> viewport_v = viewport_height * -v; </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        pixel_delta_u = viewport_u / <a class="code hl_variable" href="classcamera.html#a86b96b9111783e1b5e6c24ff4912d958">image_width</a>;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        pixel_delta_v = viewport_v / image_height;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        <span class="keyword">auto</span> viewport_upper_left = center - (focal_length * w) - viewport_u / 2 - viewport_v / 2;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        pixel00_loc = viewport_upper_left + 0.5 * (pixel_delta_u + pixel_delta_v);</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    }</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    <a class="code hl_class" href="class_ray.html">Ray</a> get_ray(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        <span class="keyword">auto</span> pixel_center = pixel00_loc + (i * pixel_delta_u) + (j * pixel_delta_v);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        <span class="keyword">auto</span> pixel_sample = pixel_center + pixel_sample_square();</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        <span class="keyword">auto</span> ray_origin = center;</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        <span class="keyword">auto</span> ray_direction = pixel_sample - ray_origin;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="class_ray.html">Ray</a>(ray_origin, ray_direction);</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    }</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <a class="code hl_class" href="classvec3.html">vec3</a> pixel_sample_square()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        <span class="keyword">auto</span> px = -0.5 + random_double();</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        <span class="keyword">auto</span> py = -0.5 + random_double();</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        <span class="keywordflow">return</span> (px * pixel_delta_u) + (py * pixel_delta_v);</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    }</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    <a class="code hl_class" href="classvec3.html">color</a> background_color(<span class="keyword">const</span> <a class="code hl_class" href="class_ray.html">Ray</a>&amp; r)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        <a class="code hl_class" href="classvec3.html">vec3</a> unit_direction = unit_vector(r.<a class="code hl_function" href="class_ray.html#a9f84262853e9a65340154c1ddb010538">direction</a>());</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        <span class="keyword">auto</span> a = 0.5 * (unit_direction.y + 1.0);</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        <span class="keywordflow">return</span> (1.0 - a) * <a class="code hl_class" href="classvec3.html">vec3</a>(1.0, 1.0, 1.0) + a * <a class="code hl_class" href="classvec3.html">vec3</a>(0.5, 0.7, 1.0);</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    }</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    <a class="code hl_class" href="classvec3.html">color</a> ray_color(<span class="keyword">const</span> <a class="code hl_class" href="class_ray.html">Ray</a>&amp; r, <span class="keywordtype">int</span> depth, <span class="keyword">const</span> <a class="code hl_class" href="classhittable.html">hittable</a>&amp; world)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        <a class="code hl_class" href="classhit__record.html">hit_record</a> rec;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        <span class="keywordflow">if</span> (depth &lt;= 0)</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>            <span class="keywordflow">return</span> <a class="code hl_class" href="classvec3.html">color</a>(0, 0, 0);</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>        <span class="keywordflow">if</span> (world.<a class="code hl_function" href="classhittable.html#ab2f77f57e961949b54fc1c508985f10b">hit</a>(r, <a class="code hl_class" href="classinterval.html">interval</a>(0.001, infinity), rec)) {</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>            <a class="code hl_class" href="class_ray.html">Ray</a> scattered;</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>            <a class="code hl_class" href="classvec3.html">color</a> attenuation;</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>            <span class="keywordflow">if</span> (rec.mat-&gt;scatter(r, rec, attenuation, scattered)) {</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>                <span class="keywordflow">return</span> <a class="code hl_class" href="classvec3.html">color</a>(attenuation.x, attenuation.y, attenuation.z) * ray_color(scattered, depth - 1, world);</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>            }</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>            <span class="keywordflow">return</span> <a class="code hl_class" href="classvec3.html">color</a>(0, 0, 0);</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        }</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>        <span class="keywordflow">return</span> background_color(r);</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    }</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>};</div>
+</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_ray_html"><div class="ttname"><a href="class_ray.html">Ray</a></div><div class="ttdoc">A classe Ray representa um raio no espaÁo tridimensional.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="_ray_8h_source.html#l00011">Ray.h:11</a></div></div>
+<div class="ttc" id="aclass_ray_html_a9f84262853e9a65340154c1ddb010538"><div class="ttname"><a href="class_ray.html#a9f84262853e9a65340154c1ddb010538">Ray::direction</a></div><div class="ttdeci">vec3 direction() const</div><div class="ttdoc">FunÁ„o de acesso para obter a direÁ„o do raio.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="_ray_8cpp_source.html#l00028">Ray.cpp:28</a></div></div>
+<div class="ttc" id="aclasscamera_html"><div class="ttname"><a href="classcamera.html">camera</a></div><div class="ttdoc">Classe que representa uma c‚mera para renderizaÁ„o de imagens.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="_camera_8h_source.html#l00025">Camera.h:25</a></div></div>
+<div class="ttc" id="aclasscamera_html_a16bd0b9cbc703e572b2f0976829c97bb"><div class="ttname"><a href="classcamera.html#a16bd0b9cbc703e572b2f0976829c97bb">camera::samples_per_pixel</a></div><div class="ttdeci">int samples_per_pixel</div><div class="ttdoc">Contagem de amostras aleatÛrias para cada pixel.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="_camera_8h_source.html#l00040">Camera.h:40</a></div></div>
+<div class="ttc" id="aclasscamera_html_a3a037bbf9dc638e9a8ae4a279ccd00be"><div class="ttname"><a href="classcamera.html#a3a037bbf9dc638e9a8ae4a279ccd00be">camera::lookfrom</a></div><div class="ttdeci">vec3 lookfrom</div><div class="ttdoc">Ponto de onde a c‚mera est· olhando.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="_camera_8h_source.html#l00055">Camera.h:55</a></div></div>
+<div class="ttc" id="aclasscamera_html_a513e0f8d75fcae459492e3b684ea6330"><div class="ttname"><a href="classcamera.html#a513e0f8d75fcae459492e3b684ea6330">camera::max_depth</a></div><div class="ttdeci">int max_depth</div><div class="ttdoc">Profundidade m·xima de rastreamento de raios.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="_camera_8h_source.html#l00045">Camera.h:45</a></div></div>
+<div class="ttc" id="aclasscamera_html_a57073c102fb3fb3f1777ce3663ed1c96"><div class="ttname"><a href="classcamera.html#a57073c102fb3fb3f1777ce3663ed1c96">camera::vup</a></div><div class="ttdeci">vec3 vup</div><div class="ttdoc">DireÁ„o &quot;para cima&quot; em relaÁ„o ‡ c‚mera.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="_camera_8h_source.html#l00065">Camera.h:65</a></div></div>
+<div class="ttc" id="aclasscamera_html_a7d29d0700daf7faddaa75437d96fa59f"><div class="ttname"><a href="classcamera.html#a7d29d0700daf7faddaa75437d96fa59f">camera::render</a></div><div class="ttdeci">cimg_library::CImg&lt; unsigned char &gt; render(const hittable &amp;world)</div><div class="ttdoc">Renderiza a cena definida pelo mundo.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="_camera_8h_source.html#l00072">Camera.h:72</a></div></div>
+<div class="ttc" id="aclasscamera_html_a86b96b9111783e1b5e6c24ff4912d958"><div class="ttname"><a href="classcamera.html#a86b96b9111783e1b5e6c24ff4912d958">camera::image_width</a></div><div class="ttdeci">int image_width</div><div class="ttdoc">Largura da imagem renderizada em contagem de pixels.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="_camera_8h_source.html#l00035">Camera.h:35</a></div></div>
+<div class="ttc" id="aclasscamera_html_aa39de6d0d8301f42db272036e3ce0fb9"><div class="ttname"><a href="classcamera.html#aa39de6d0d8301f42db272036e3ce0fb9">camera::aspect_ratio</a></div><div class="ttdeci">double aspect_ratio</div><div class="ttdoc">Taxa de aspecto da imagem.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="_camera_8h_source.html#l00030">Camera.h:30</a></div></div>
+<div class="ttc" id="aclasscamera_html_ae0cd3560962c14125194fe750d4a6069"><div class="ttname"><a href="classcamera.html#ae0cd3560962c14125194fe750d4a6069">camera::vfov</a></div><div class="ttdeci">double vfov</div><div class="ttdoc">¬ngulo de vis„o vertical (campo de vis„o).</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="_camera_8h_source.html#l00050">Camera.h:50</a></div></div>
+<div class="ttc" id="aclasscamera_html_ae590ffc93d9a16e5e8fd8de6b65ead6c"><div class="ttname"><a href="classcamera.html#ae590ffc93d9a16e5e8fd8de6b65ead6c">camera::lookat</a></div><div class="ttdeci">vec3 lookat</div><div class="ttdoc">Ponto para onde a c‚mera est· olhando.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="_camera_8h_source.html#l00060">Camera.h:60</a></div></div>
+<div class="ttc" id="aclasshit__record_html"><div class="ttname"><a href="classhit__record.html">hit_record</a></div><div class="ttdoc">Classe que representa um registro de colis„o.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="hittable_8h_source.html#l00012">hittable.h:12</a></div></div>
+<div class="ttc" id="aclasshittable_html"><div class="ttname"><a href="classhittable.html">hittable</a></div><div class="ttdoc">Classe abstrata que define um objeto que pode ser atingido por um raio.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="hittable_8h_source.html#l00034">hittable.h:34</a></div></div>
+<div class="ttc" id="aclasshittable_html_ab2f77f57e961949b54fc1c508985f10b"><div class="ttname"><a href="classhittable.html#ab2f77f57e961949b54fc1c508985f10b">hittable::hit</a></div><div class="ttdeci">virtual bool hit(const Ray &amp;r, interval ray_t, hit_record &amp;rec) const =0</div><div class="ttdoc">Verifica se o raio atinge o objeto e, se sim, registra as informaÁıes de colis„o.</div></div>
+<div class="ttc" id="aclassinterval_html"><div class="ttname"><a href="classinterval.html">interval</a></div><div class="ttdoc">Classe que representa um intervalo.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="_interval_8h_source.html#l00010">Interval.h:10</a></div></div>
+<div class="ttc" id="aclassvec3_html"><div class="ttname"><a href="classvec3.html">vec3</a></div><div class="ttdoc">Classe que representa um vetor 3D.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8h_source.html#l00066">matvec.h:66</a></div></div>
+<div class="ttc" id="amatvec_8h_html"><div class="ttname"><a href="matvec_8h.html">matvec.h</a></div><div class="ttdoc">ContÈm as definiÁıes de classes para vetores e matrizes 2D, 3D e 4D.</div></div>
+<div class="ttc" id="astructcimg__library_1_1_c_img_html"><div class="ttname"><a href="structcimg__library_1_1_c_img.html">cimg_library::CImg</a></div><div class="ttdoc">Class representing an image (up to 4 dimensions wide), each pixel being of type T.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="_c_img_8h_source.html#l11795">CImg.h:11795</a></div></div>
+<div class="ttc" id="astructcimg__library_1_1_c_img_html_ab85a8e52d50bec4e92e13a0b60f5ea78"><div class="ttname"><a href="structcimg__library_1_1_c_img.html#ab85a8e52d50bec4e92e13a0b60f5ea78">cimg_library::CImg::draw_point</a></div><div class="ttdeci">CImg&lt; T &gt; &amp; draw_point(const int x0, const int y0, const int z0, const tc *const color, const float opacity=1)</div><div class="ttdoc">Draw a 3D point.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="_c_img_8h_source.html#l47618">CImg.h:47618</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>Camera.h</b></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

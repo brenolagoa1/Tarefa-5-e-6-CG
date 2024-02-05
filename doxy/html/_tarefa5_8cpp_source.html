@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Tarefa 5 e 6 CG: C√≥digo-Fonte de Tarefa5.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Tarefa 5 e 6 CG<span id="projectnumber">&#160;v1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('_tarefa5_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Tarefa5.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#define cimg_display 0</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;CImg.h&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;omp.h&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="matvec_8h.html">matvec.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;Ray.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;objeto.h&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;Triangulo.h&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;Interval.h&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;hittable_list.h&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;camera.h&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;color.h&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;material.h&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;sphere.h&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;Tarefa5.h&quot;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacecimg__library.html">cimg_library</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keywordtype">void</span> salvarImagem(<span class="keyword">const</span> <a class="code hl_struct" href="structcimg__library_1_1_c_img.html">CImg&lt;unsigned char&gt;</a>&amp; imagem, <span class="keyword">const</span> std::string&amp; nomeArquivo) {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    imagem.<a class="code hl_function" href="structcimg__library_1_1_c_img.html#a78a2e382dd71914502e9d69d0764133d">save_png</a>(nomeArquivo.c_str());</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>}</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keywordtype">int</span> main() {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_class" href="classhittable__list.html">hittable_list</a> world;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keyword">auto</span> material_ground = make_shared&lt;lambertian&gt;(<a class="code hl_class" href="classvec3.html">color</a>(0.8, 0.8, 0.0));</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">auto</span> material_seahorse = make_shared&lt;dielectric&gt;(1.1);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keyword">auto</span> material_cube = make_shared&lt;metal&gt;(<a class="code hl_class" href="classvec3.html">color</a>(0.512161, 0.014327, 0.2), 0.08);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keyword">auto</span> material_center = make_shared&lt;lambertian&gt;(<a class="code hl_class" href="classvec3.html">color</a>(0.1, 0.2, 0.5));</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    world.<a class="code hl_function" href="classhittable__list.html#a6f51233df1bf18c6665a9ec36e475f39">add</a>(make_shared&lt;sphere&gt;(<a class="code hl_class" href="classvec3.html">vec3</a>(0.0, -100.5, -1.0), 100.0, material_ground));</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    world.<a class="code hl_function" href="classhittable__list.html#a6f51233df1bf18c6665a9ec36e475f39">add</a>(make_shared&lt;sphere&gt;(<a class="code hl_class" href="classvec3.html">vec3</a>(0.2, 0.0, -1.0), 0.5, material_center));</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <a class="code hl_class" href="class_objeto.html">Objeto</a> obj;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    std::vector&lt;Triangulo&gt; cubo = obj.<a class="code hl_function" href="class_objeto.html#a08ffeb8e1cbce90d5218e25e88276ab3">readObj</a>(<span class="stringliteral">&quot;C:\\Users\\lagoa\\source\\repos\\tarefa4\\cube.obj&quot;</span>, <a class="code hl_class" href="classvec3.html">vec3</a>(-0.9, 0.5, -0.8), 0.8);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    std::vector&lt;Triangulo&gt; cavalomarinho = obj.<a class="code hl_function" href="class_objeto.html#a08ffeb8e1cbce90d5218e25e88276ab3">readObj</a>(<span class="stringliteral">&quot;C:\\Users\\lagoa\\source\\repos\\tarefa4\\cube.obj&quot;</span>, <a class="code hl_class" href="classvec3.html">vec3</a>(1.7, 0.5, -1.0), 0.8);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">for</span> (<a class="code hl_class" href="class_triangulo.html">Triangulo</a>&amp; t : cavalomarinho) {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        t.mat = material_seahorse;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        world.<a class="code hl_function" href="classhittable__list.html#a6f51233df1bf18c6665a9ec36e475f39">add</a>(make_shared&lt;Triangulo&gt;(t));</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; t : cubo) {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        t.mat = material_cube;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        world.<a class="code hl_function" href="classhittable__list.html#a6f51233df1bf18c6665a9ec36e475f39">add</a>(make_shared&lt;Triangulo&gt;(t));</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    }</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <a class="code hl_class" href="classcamera.html">camera</a> cam;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="comment">//camera cam2;</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    cam.<a class="code hl_variable" href="classcamera.html#aa39de6d0d8301f42db272036e3ce0fb9">aspect_ratio</a> = 16.0 / 9.0;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    cam.<a class="code hl_variable" href="classcamera.html#a86b96b9111783e1b5e6c24ff4912d958">image_width</a> = 720;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    cam.<a class="code hl_variable" href="classcamera.html#a16bd0b9cbc703e572b2f0976829c97bb">samples_per_pixel</a> = 100;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    cam.<a class="code hl_variable" href="classcamera.html#a513e0f8d75fcae459492e3b684ea6330">max_depth</a> = 50;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    cam.<a class="code hl_variable" href="classcamera.html#ae0cd3560962c14125194fe750d4a6069">vfov</a> = 90;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    cam.<a class="code hl_variable" href="classcamera.html#a3a037bbf9dc638e9a8ae4a279ccd00be">lookfrom</a> = <a class="code hl_class" href="classvec3.html">vec3</a>(0, 0, 1);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    cam.<a class="code hl_variable" href="classcamera.html#ae590ffc93d9a16e5e8fd8de6b65ead6c">lookat</a> = <a class="code hl_class" href="classvec3.html">vec3</a>(0, 0, -1);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    cam.<a class="code hl_variable" href="classcamera.html#a57073c102fb3fb3f1777ce3663ed1c96">vup</a> = <a class="code hl_class" href="classvec3.html">vec3</a>(0, 1, 0);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <a class="code hl_struct" href="structcimg__library_1_1_c_img.html">CImg&lt;unsigned char&gt;</a> imagem = cam.<a class="code hl_function" href="classcamera.html#a7d29d0700daf7faddaa75437d96fa59f">render</a>(world);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    cam.<a class="code hl_variable" href="classcamera.html#a3a037bbf9dc638e9a8ae4a279ccd00be">lookfrom</a> = <a class="code hl_class" href="classvec3.html">vec3</a>(3, 2, 2);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <a class="code hl_struct" href="structcimg__library_1_1_c_img.html">CImg&lt;unsigned char&gt;</a> imagem_camera2 = cam.<a class="code hl_function" href="classcamera.html#a7d29d0700daf7faddaa75437d96fa59f">render</a>(world);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    salvarImagem(imagem, <span class="stringliteral">&quot;mundo.png&quot;</span>);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    salvarImagem(imagem_camera2, <span class="stringliteral">&quot;mundocamera2.png&quot;</span>);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>}</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="ttc" id="aclass_objeto_html"><div class="ttname"><a href="class_objeto.html">Objeto</a></div><div class="ttdoc">Classe que representa um objeto tridimensional carregado a partir de um arquivo.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="_objeto_8h_source.html#l00018">Objeto.h:18</a></div></div>
+<div class="ttc" id="aclass_objeto_html_a08ffeb8e1cbce90d5218e25e88276ab3"><div class="ttname"><a href="class_objeto.html#a08ffeb8e1cbce90d5218e25e88276ab3">Objeto::readObj</a></div><div class="ttdeci">std::vector&lt; Triangulo &gt; readObj(const std::string &amp;filePath, const vec3 point, float resize) const</div><div class="ttdoc">FunÁ„o para ler um arquivo OBJ e criar uma lista de Tri‚ngulos.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="_objeto_8h_source.html#l00029">Objeto.h:29</a></div></div>
+<div class="ttc" id="aclass_triangulo_html"><div class="ttname"><a href="class_triangulo.html">Triangulo</a></div><div class="ttdoc">Classe que representa um tri‚ngulo em um espaÁo tridimensional.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="_triangulo_8h_source.html#l00011">Triangulo.h:11</a></div></div>
+<div class="ttc" id="aclasscamera_html"><div class="ttname"><a href="classcamera.html">camera</a></div><div class="ttdoc">Classe que representa uma c‚mera para renderizaÁ„o de imagens.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="_camera_8h_source.html#l00025">Camera.h:25</a></div></div>
+<div class="ttc" id="aclasscamera_html_a16bd0b9cbc703e572b2f0976829c97bb"><div class="ttname"><a href="classcamera.html#a16bd0b9cbc703e572b2f0976829c97bb">camera::samples_per_pixel</a></div><div class="ttdeci">int samples_per_pixel</div><div class="ttdoc">Contagem de amostras aleatÛrias para cada pixel.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="_camera_8h_source.html#l00040">Camera.h:40</a></div></div>
+<div class="ttc" id="aclasscamera_html_a3a037bbf9dc638e9a8ae4a279ccd00be"><div class="ttname"><a href="classcamera.html#a3a037bbf9dc638e9a8ae4a279ccd00be">camera::lookfrom</a></div><div class="ttdeci">vec3 lookfrom</div><div class="ttdoc">Ponto de onde a c‚mera est· olhando.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="_camera_8h_source.html#l00055">Camera.h:55</a></div></div>
+<div class="ttc" id="aclasscamera_html_a513e0f8d75fcae459492e3b684ea6330"><div class="ttname"><a href="classcamera.html#a513e0f8d75fcae459492e3b684ea6330">camera::max_depth</a></div><div class="ttdeci">int max_depth</div><div class="ttdoc">Profundidade m·xima de rastreamento de raios.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="_camera_8h_source.html#l00045">Camera.h:45</a></div></div>
+<div class="ttc" id="aclasscamera_html_a57073c102fb3fb3f1777ce3663ed1c96"><div class="ttname"><a href="classcamera.html#a57073c102fb3fb3f1777ce3663ed1c96">camera::vup</a></div><div class="ttdeci">vec3 vup</div><div class="ttdoc">DireÁ„o &quot;para cima&quot; em relaÁ„o ‡ c‚mera.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="_camera_8h_source.html#l00065">Camera.h:65</a></div></div>
+<div class="ttc" id="aclasscamera_html_a7d29d0700daf7faddaa75437d96fa59f"><div class="ttname"><a href="classcamera.html#a7d29d0700daf7faddaa75437d96fa59f">camera::render</a></div><div class="ttdeci">cimg_library::CImg&lt; unsigned char &gt; render(const hittable &amp;world)</div><div class="ttdoc">Renderiza a cena definida pelo mundo.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="_camera_8h_source.html#l00072">Camera.h:72</a></div></div>
+<div class="ttc" id="aclasscamera_html_a86b96b9111783e1b5e6c24ff4912d958"><div class="ttname"><a href="classcamera.html#a86b96b9111783e1b5e6c24ff4912d958">camera::image_width</a></div><div class="ttdeci">int image_width</div><div class="ttdoc">Largura da imagem renderizada em contagem de pixels.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="_camera_8h_source.html#l00035">Camera.h:35</a></div></div>
+<div class="ttc" id="aclasscamera_html_aa39de6d0d8301f42db272036e3ce0fb9"><div class="ttname"><a href="classcamera.html#aa39de6d0d8301f42db272036e3ce0fb9">camera::aspect_ratio</a></div><div class="ttdeci">double aspect_ratio</div><div class="ttdoc">Taxa de aspecto da imagem.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="_camera_8h_source.html#l00030">Camera.h:30</a></div></div>
+<div class="ttc" id="aclasscamera_html_ae0cd3560962c14125194fe750d4a6069"><div class="ttname"><a href="classcamera.html#ae0cd3560962c14125194fe750d4a6069">camera::vfov</a></div><div class="ttdeci">double vfov</div><div class="ttdoc">¬ngulo de vis„o vertical (campo de vis„o).</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="_camera_8h_source.html#l00050">Camera.h:50</a></div></div>
+<div class="ttc" id="aclasscamera_html_ae590ffc93d9a16e5e8fd8de6b65ead6c"><div class="ttname"><a href="classcamera.html#ae590ffc93d9a16e5e8fd8de6b65ead6c">camera::lookat</a></div><div class="ttdeci">vec3 lookat</div><div class="ttdoc">Ponto para onde a c‚mera est· olhando.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="_camera_8h_source.html#l00060">Camera.h:60</a></div></div>
+<div class="ttc" id="aclasshittable__list_html"><div class="ttname"><a href="classhittable__list.html">hittable_list</a></div><div class="ttdoc">Classe que representa uma lista de objetos hittable. Herda da classe hittable, indicando sua capacida...</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="hittable__list_8h_source.html#l00016">hittable_list.h:16</a></div></div>
+<div class="ttc" id="aclasshittable__list_html_a6f51233df1bf18c6665a9ec36e475f39"><div class="ttname"><a href="classhittable__list.html#a6f51233df1bf18c6665a9ec36e475f39">hittable_list::add</a></div><div class="ttdeci">void add(shared_ptr&lt; hittable &gt; object)</div><div class="ttdoc">Adiciona um objeto hittable ‡ lista.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="hittable__list_8h_source.html#l00040">hittable_list.h:40</a></div></div>
+<div class="ttc" id="aclassvec3_html"><div class="ttname"><a href="classvec3.html">vec3</a></div><div class="ttdoc">Classe que representa um vetor 3D.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8h_source.html#l00066">matvec.h:66</a></div></div>
+<div class="ttc" id="amatvec_8h_html"><div class="ttname"><a href="matvec_8h.html">matvec.h</a></div><div class="ttdoc">ContÈm as definiÁıes de classes para vetores e matrizes 2D, 3D e 4D.</div></div>
+<div class="ttc" id="anamespacecimg__library_html"><div class="ttname"><a href="namespacecimg__library.html">cimg_library</a></div><div class="ttdoc">Contains all classes and functions of the \CImg library.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="_c_img_8h_source.html#l02308">CImg.h:2308</a></div></div>
+<div class="ttc" id="astructcimg__library_1_1_c_img_html"><div class="ttname"><a href="structcimg__library_1_1_c_img.html">cimg_library::CImg</a></div><div class="ttdoc">Class representing an image (up to 4 dimensions wide), each pixel being of type T.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="_c_img_8h_source.html#l11795">CImg.h:11795</a></div></div>
+<div class="ttc" id="astructcimg__library_1_1_c_img_html_a78a2e382dd71914502e9d69d0764133d"><div class="ttname"><a href="structcimg__library_1_1_c_img.html#a78a2e382dd71914502e9d69d0764133d">cimg_library::CImg::save_png</a></div><div class="ttdeci">const CImg&lt; T &gt; &amp; save_png(const char *const filename, const unsigned int bytes_per_pixel=0) const</div><div class="ttdoc">Save image as a PNG file.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="_c_img_8h_source.html#l59347">CImg.h:59347</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>Tarefa5.cpp</b></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

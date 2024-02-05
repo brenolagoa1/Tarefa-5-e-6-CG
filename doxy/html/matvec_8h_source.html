@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Tarefa 5 e 6 CG: C√≥digo-Fonte de matvec.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Tarefa 5 e 6 CG<span id="projectnumber">&#160;v1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('matvec_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">matvec.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="matvec_8h.html">Ir para a documenta√ß√£o desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef MATVEC_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define MATVEC_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classvec2.html">   15</a></span><span class="keyword">class </span><a class="code hl_class" href="classvec2.html">vec2</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">double</span> x, y;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_function" href="classvec2.html#ae12a1a221eca3561809600a11b58eaa3">vec2</a>();</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_function" href="classvec2.html#ae12a1a221eca3561809600a11b58eaa3">vec2</a>(<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_class" href="classvec2.html">vec2</a> <a class="code hl_function" href="classvec2.html#a1c57b3fe8179737266104a37f2699569">operator+</a>(<span class="keyword">const</span> <a class="code hl_class" href="classvec2.html">vec2</a>&amp; other) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_class" href="classvec2.html">vec2</a> <a class="code hl_function" href="classvec2.html#a77fdb4dc52f8736f49db0cbea2ea8739">operator-</a>(<span class="keyword">const</span> <a class="code hl_class" href="classvec2.html">vec2</a>&amp; other) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">double</span> <a class="code hl_function" href="classvec2.html#a0f086a965cc7d7181e4ec65a0aae2e6f">operator*</a>(<span class="keyword">const</span> <a class="code hl_class" href="classvec2.html">vec2</a>&amp; other) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <a class="code hl_class" href="classvec2.html">vec2</a> <a class="code hl_function" href="classvec2.html#a0f086a965cc7d7181e4ec65a0aae2e6f">operator*</a>(<span class="keywordtype">double</span> scalar) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <a class="code hl_class" href="classvec2.html">vec2</a> <a class="code hl_function" href="classvec2.html#a7dd96b09b79aa0442f7066e163687769">operator/</a>(<span class="keywordtype">double</span> scalar) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">double</span> <a class="code hl_function" href="classvec2.html#ae30b6dfb3feb9aa9d6051fdb3b50ea90">length</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>};</div>
+</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="foldopen" id="foldopen00066" data-start="{" data-end="};">
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classvec3.html">   66</a></span><span class="keyword">class </span><a class="code hl_class" href="classvec3.html">vec3</a> {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordtype">double</span> x, y, z;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <a class="code hl_function" href="classvec3.html#aea9f3480a6ccd7ce3ab02d0992705d33">vec3</a>();</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <a class="code hl_function" href="classvec3.html#aea9f3480a6ccd7ce3ab02d0992705d33">vec3</a>(<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> z);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <a class="code hl_class" href="classvec3.html">vec3</a> <a class="code hl_function" href="classvec3.html#a0f4ba73a2ffc2f4166b89be9e874c2d0">operator+</a>(<span class="keyword">const</span> <a class="code hl_class" href="classvec3.html">vec3</a>&amp; other) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <a class="code hl_class" href="classvec3.html">vec3</a> <a class="code hl_function" href="classvec3.html#ae5b4bddd119d41f0373705fb03a74cdd">operator-</a>(<span class="keyword">const</span> <a class="code hl_class" href="classvec3.html">vec3</a>&amp; other) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <a class="code hl_class" href="classvec3.html">vec3</a> <a class="code hl_function" href="classvec3.html#a118a478840f2f3cc9c623dd2443c218f">operator/</a>(<span class="keywordtype">double</span> scalar) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordtype">double</span> <a class="code hl_function" href="classvec3.html#a5d54726a6e5ea2a66ba687fe5d4b1c9a">length</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordtype">double</span> <a class="code hl_function" href="classvec3.html#a1be4d540a0eef0cc388b6b0a23021ca4">length_squared</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classvec3.html#a3113f5f52253753d0a37aa8972b23f52">near_zero</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <a class="code hl_class" href="classvec3.html">vec3</a> <a class="code hl_function" href="classvec3.html#aa8ca9de7c1ab45b661f04c2dda66febf">operator*</a>(<span class="keywordtype">double</span> scalar) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>};</div>
+</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="foldopen" id="foldopen00123" data-start="{" data-end="};">
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="classivec3.html">  123</a></span><span class="keyword">class </span><a class="code hl_class" href="classivec3.html">ivec3</a> {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordtype">int</span> x, y, z;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <a class="code hl_function" href="classivec3.html#a3c25967c6d1786aa7a3ca3d60eb8c5a0">ivec3</a>();</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <a class="code hl_function" href="classivec3.html#a3c25967c6d1786aa7a3ca3d60eb8c5a0">ivec3</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> z);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>};</div>
+</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><a class="code hl_class" href="classvec3.html">vec3</a> <a class="code hl_function" href="matvec_8h.html#ad57f6a85dd0416a336c6d6bbbfdf5441">operator-</a>(<span class="keyword">const</span> <a class="code hl_class" href="classvec3.html">vec3</a>&amp; v);</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><a class="code hl_class" href="classvec3.html">vec3</a> <a class="code hl_function" href="matvec_8h.html#a6ddfc6a69c41d9afa45a5fa7a23ded73">operator*</a>(<span class="keywordtype">double</span> scalar, <span class="keyword">const</span> <a class="code hl_class" href="classvec3.html">vec3</a>&amp; v);</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><a class="code hl_class" href="classvec3.html">vec3</a> <a class="code hl_function" href="matvec_8h.html#aa738db3c021b4114e34124a45cf117f5">operator/</a>(<span class="keywordtype">double</span> scalar, <span class="keyword">const</span> <a class="code hl_class" href="classvec3.html">vec3</a>&amp; v);</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><a class="code hl_class" href="classvec3.html">vec3</a> <a class="code hl_function" href="matvec_8h.html#a7138f7ab204cf8d71168aadc80ac2561">unit_vector</a>(<span class="keyword">const</span> <a class="code hl_class" href="classvec3.html">vec3</a>&amp; v);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span><a class="code hl_class" href="classvec3.html">vec3</a> <a class="code hl_function" href="matvec_8h.html#ab5889dcdb0ad1241997e5f127e5c8809">cross</a>(<span class="keyword">const</span> <a class="code hl_class" href="classvec3.html">vec3</a>&amp; v1, <span class="keyword">const</span> <a class="code hl_class" href="classvec3.html">vec3</a>&amp; v2);</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span><span class="keywordtype">double</span> <a class="code hl_function" href="matvec_8h.html#abc3b6874dbb4b1cde526f10bc28b7486">dot</a>(<span class="keyword">const</span> <a class="code hl_class" href="classvec3.html">vec3</a>&amp; v1, <span class="keyword">const</span> <a class="code hl_class" href="classvec3.html">vec3</a>&amp; v2);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="foldopen" id="foldopen00177" data-start="{" data-end="};">
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="classvec4.html">  177</a></span><span class="keyword">class </span><a class="code hl_class" href="classvec4.html">vec4</a> {</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="keywordtype">double</span> x, y, z, w;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <a class="code hl_function" href="classvec4.html#aa29685cf2528dae6ad7d74a7e01c1d6f">vec4</a>();</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <a class="code hl_function" href="classvec4.html#aa29685cf2528dae6ad7d74a7e01c1d6f">vec4</a>(<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> z, <span class="keywordtype">double</span> w);</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    <a class="code hl_class" href="classvec4.html">vec4</a> <a class="code hl_function" href="classvec4.html#a017cc848924507800c42628e3c2c6ab3">operator+</a>(<span class="keyword">const</span> <a class="code hl_class" href="classvec4.html">vec4</a>&amp; other) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <a class="code hl_class" href="classvec4.html">vec4</a> <a class="code hl_function" href="classvec4.html#a61918909e2a1d30ff69ccfee37d40d30">operator-</a>(<span class="keyword">const</span> <a class="code hl_class" href="classvec4.html">vec4</a>&amp; other) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    <span class="keywordtype">double</span> <a class="code hl_function" href="classvec4.html#a669c42363ef915565141c41218b1826a">operator*</a>(<span class="keyword">const</span> <a class="code hl_class" href="classvec4.html">vec4</a>&amp; other) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    <a class="code hl_class" href="classvec4.html">vec4</a> <a class="code hl_function" href="classvec4.html#a669c42363ef915565141c41218b1826a">operator*</a>(<span class="keywordtype">double</span> scalar) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    <a class="code hl_class" href="classvec4.html">vec4</a> <a class="code hl_function" href="classvec4.html#a397fed78ff70717abf03a757cd34793b">operator/</a>(<span class="keywordtype">double</span> scalar) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    <span class="keywordtype">double</span> <a class="code hl_function" href="classvec4.html#a55e485d22f9ee137f383304b962489b1">length</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>};</div>
+</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
+<div class="foldopen" id="foldopen00241" data-start="{" data-end="};">
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno"><a class="line" href="classmat2.html">  241</a></span><span class="keyword">class </span><a class="code hl_class" href="classmat2.html">mat2</a> {</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    <span class="keywordtype">double</span> data[2][2];</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    <a class="code hl_function" href="classmat2.html#a16c2f59c181807c930eca7955a17e6ed">mat2</a>();</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span> </div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    <a class="code hl_function" href="classmat2.html#a16c2f59c181807c930eca7955a17e6ed">mat2</a>(<span class="keywordtype">double</span> a, <span class="keywordtype">double</span> b, <span class="keywordtype">double</span> c, <span class="keywordtype">double</span> d);</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span> </div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    <a class="code hl_class" href="classmat2.html">mat2</a> <a class="code hl_function" href="classmat2.html#abded41e8dc70e7dc74ae890205fff3e6">operator+</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmat2.html">mat2</a>&amp; other) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>};</div>
+</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
+<div class="foldopen" id="foldopen00271" data-start="{" data-end="};">
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno"><a class="line" href="classmat3.html">  271</a></span><span class="keyword">class </span><a class="code hl_class" href="classmat3.html">mat3</a> {</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    <span class="keywordtype">double</span> data[3][3];</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span> </div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    <a class="code hl_function" href="classmat3.html#a463027040addb1c56fe84c91b74b8d79">mat3</a>();</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span> </div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>    <a class="code hl_function" href="classmat3.html#a463027040addb1c56fe84c91b74b8d79">mat3</a>(<span class="keywordtype">double</span> a, <span class="keywordtype">double</span> b, <span class="keywordtype">double</span> c, <span class="keywordtype">double</span> d, <span class="keywordtype">double</span> e, <span class="keywordtype">double</span> f, <span class="keywordtype">double</span> g, <span class="keywordtype">double</span> h, <span class="keywordtype">double</span> i);</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span> </div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    <a class="code hl_class" href="classmat3.html">mat3</a> <a class="code hl_function" href="classmat3.html#ab1f64bc42e55f7778d60328c6148890e">operator+</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmat3.html">mat3</a>&amp; other) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>};</div>
+</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span> </div>
+<div class="foldopen" id="foldopen00306" data-start="{" data-end="};">
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno"><a class="line" href="classmat4.html">  306</a></span><span class="keyword">class </span><a class="code hl_class" href="classmat4.html">mat4</a> {</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>    <span class="keywordtype">double</span> data[4][4];</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span> </div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>    <a class="code hl_function" href="classmat4.html#acf3f0c37ff5c16e8fb1bfdde2bf87a0f">mat4</a>();</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span> </div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>    <a class="code hl_function" href="classmat4.html#acf3f0c37ff5c16e8fb1bfdde2bf87a0f">mat4</a>(<span class="keywordtype">double</span> a, <span class="keywordtype">double</span> b, <span class="keywordtype">double</span> c, <span class="keywordtype">double</span> d, <span class="keywordtype">double</span> e, <span class="keywordtype">double</span> f, <span class="keywordtype">double</span> g, <span class="keywordtype">double</span> h, <span class="keywordtype">double</span> i, <span class="keywordtype">double</span> j, <span class="keywordtype">double</span> k, <span class="keywordtype">double</span> l, <span class="keywordtype">double</span> m, <span class="keywordtype">double</span> n, <span class="keywordtype">double</span> o, <span class="keywordtype">double</span> p);</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span> </div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>    <a class="code hl_class" href="classmat4.html">mat4</a> <a class="code hl_function" href="classmat4.html#a41f0204d2ee9b55cea6a82643e35288b">operator+</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmat4.html">mat4</a>&amp; other) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>};</div>
+</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span> </div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span><a class="code hl_class" href="classvec2.html">vec2</a> <a class="code hl_function" href="matvec_8h.html#a6ddfc6a69c41d9afa45a5fa7a23ded73">operator*</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmat2.html">mat2</a>&amp; m, <span class="keyword">const</span> <a class="code hl_class" href="classvec2.html">vec2</a>&amp; v);</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span> </div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span><a class="code hl_class" href="classvec4.html">vec4</a> <a class="code hl_function" href="matvec_8h.html#a6ddfc6a69c41d9afa45a5fa7a23ded73">operator*</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmat4.html">mat4</a>&amp; m, <span class="keyword">const</span> <a class="code hl_class" href="classvec4.html">vec4</a>&amp; v);</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span> </div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span><span class="keywordtype">double</span> <a class="code hl_function" href="matvec_8h.html#a98b7c682bb6ace85fb747cd2f14db72b">random_double</a>();</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span> </div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span><span class="keywordtype">double</span> <a class="code hl_function" href="matvec_8h.html#a98b7c682bb6ace85fb747cd2f14db72b">random_double</a>(<span class="keywordtype">double</span> min, <span class="keywordtype">double</span> max);</div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span> </div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span><a class="code hl_class" href="classvec3.html">vec3</a> <a class="code hl_function" href="matvec_8h.html#a6ddfc6a69c41d9afa45a5fa7a23ded73">operator*</a>(<span class="keyword">const</span> <a class="code hl_class" href="classvec3.html">vec3</a>&amp; u, <span class="keyword">const</span> <a class="code hl_class" href="classvec3.html">vec3</a>&amp; v);</div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span> </div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span><span class="keyword">static</span> <a class="code hl_class" href="classvec3.html">vec3</a> random(<span class="keywordtype">double</span> min, <span class="keywordtype">double</span> max);</div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span> </div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span><a class="code hl_class" href="classvec3.html">vec3</a> <a class="code hl_function" href="matvec_8h.html#a3f23fb03258dd44e8cb410f0a030c76e">random_in_unit_sphere</a>();</div>
+<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span> </div>
+<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span><a class="code hl_class" href="classvec3.html">vec3</a> <a class="code hl_function" href="matvec_8h.html#ada1a3d344d1bceea9aeb12a0dc83a805">random_unit_vector</a>();</div>
+<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span> </div>
+<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span><a class="code hl_class" href="classvec3.html">vec3</a> <a class="code hl_function" href="matvec_8h.html#a25997d9bc8a3a0187abd63f590efe4dd">reflect</a>(<span class="keyword">const</span> <a class="code hl_class" href="classvec3.html">vec3</a>&amp; v, <span class="keyword">const</span> <a class="code hl_class" href="classvec3.html">vec3</a>&amp; n);</div>
+<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span> </div>
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span><a class="code hl_class" href="classvec3.html">vec3</a> <a class="code hl_function" href="matvec_8h.html#a85842ddb0f64a09b09c898626da3dc99">refract</a>(<span class="keyword">const</span> <a class="code hl_class" href="classvec3.html">vec3</a>&amp; uv, <span class="keyword">const</span> <a class="code hl_class" href="classvec3.html">vec3</a>&amp; n, <span class="keywordtype">double</span> etai_over_etat);</div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span> </div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span><span class="preprocessor">#endif </span><span class="comment">// MATVEC_H</span></div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span> </div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span> </div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span> </div>
+<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span> </div>
+<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span> </div>
+<div class="ttc" id="aclassivec3_html"><div class="ttname"><a href="classivec3.html">ivec3</a></div><div class="ttdoc">Classe que representa um vetor de inteiros 3D.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8h_source.html#l00123">matvec.h:123</a></div></div>
+<div class="ttc" id="aclassivec3_html_a3c25967c6d1786aa7a3ca3d60eb8c5a0"><div class="ttname"><a href="classivec3.html#a3c25967c6d1786aa7a3ca3d60eb8c5a0">ivec3::ivec3</a></div><div class="ttdeci">ivec3()</div><div class="ttdoc">Construtor padr„o.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00143">matvec.cpp:143</a></div></div>
+<div class="ttc" id="aclassmat2_html"><div class="ttname"><a href="classmat2.html">mat2</a></div><div class="ttdoc">Classe que representa uma matriz 2x2.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8h_source.html#l00241">matvec.h:241</a></div></div>
+<div class="ttc" id="aclassmat2_html_a16c2f59c181807c930eca7955a17e6ed"><div class="ttname"><a href="classmat2.html#a16c2f59c181807c930eca7955a17e6ed">mat2::mat2</a></div><div class="ttdeci">mat2()</div><div class="ttdoc">Construtor padr„o.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00207">matvec.cpp:207</a></div></div>
+<div class="ttc" id="aclassmat2_html_abded41e8dc70e7dc74ae890205fff3e6"><div class="ttname"><a href="classmat2.html#abded41e8dc70e7dc74ae890205fff3e6">mat2::operator+</a></div><div class="ttdeci">mat2 operator+(const mat2 &amp;other) const</div><div class="ttdoc">Sobrecarga do operador de adiÁ„o.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00223">matvec.cpp:223</a></div></div>
+<div class="ttc" id="aclassmat3_html"><div class="ttname"><a href="classmat3.html">mat3</a></div><div class="ttdoc">Classe que representa uma matriz 3x3.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8h_source.html#l00271">matvec.h:271</a></div></div>
+<div class="ttc" id="aclassmat3_html_a463027040addb1c56fe84c91b74b8d79"><div class="ttname"><a href="classmat3.html#a463027040addb1c56fe84c91b74b8d79">mat3::mat3</a></div><div class="ttdeci">mat3()</div><div class="ttdoc">Construtor padr„o.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00228">matvec.cpp:228</a></div></div>
+<div class="ttc" id="aclassmat3_html_ab1f64bc42e55f7778d60328c6148890e"><div class="ttname"><a href="classmat3.html#ab1f64bc42e55f7778d60328c6148890e">mat3::operator+</a></div><div class="ttdeci">mat3 operator+(const mat3 &amp;other) const</div><div class="ttdoc">Sobrecarga do operador de adiÁ„o.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00250">matvec.cpp:250</a></div></div>
+<div class="ttc" id="aclassmat4_html"><div class="ttname"><a href="classmat4.html">mat4</a></div><div class="ttdoc">Classe que representa uma matriz 4x4.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8h_source.html#l00306">matvec.h:306</a></div></div>
+<div class="ttc" id="aclassmat4_html_a41f0204d2ee9b55cea6a82643e35288b"><div class="ttname"><a href="classmat4.html#a41f0204d2ee9b55cea6a82643e35288b">mat4::operator+</a></div><div class="ttdeci">mat4 operator+(const mat4 &amp;other) const</div><div class="ttdoc">Sobrecarga do operador de adiÁ„o.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00290">matvec.cpp:290</a></div></div>
+<div class="ttc" id="aclassmat4_html_acf3f0c37ff5c16e8fb1bfdde2bf87a0f"><div class="ttname"><a href="classmat4.html#acf3f0c37ff5c16e8fb1bfdde2bf87a0f">mat4::mat4</a></div><div class="ttdeci">mat4()</div><div class="ttdoc">Construtor padr„o.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00261">matvec.cpp:261</a></div></div>
+<div class="ttc" id="aclassvec2_html"><div class="ttname"><a href="classvec2.html">vec2</a></div><div class="ttdoc">Classe que representa um vetor 2D.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8h_source.html#l00015">matvec.h:15</a></div></div>
+<div class="ttc" id="aclassvec2_html_a0f086a965cc7d7181e4ec65a0aae2e6f"><div class="ttname"><a href="classvec2.html#a0f086a965cc7d7181e4ec65a0aae2e6f">vec2::operator*</a></div><div class="ttdeci">double operator*(const vec2 &amp;other) const</div><div class="ttdoc">Sobrecarga do operador de produto escalar.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00025">matvec.cpp:25</a></div></div>
+<div class="ttc" id="aclassvec2_html_a1c57b3fe8179737266104a37f2699569"><div class="ttname"><a href="classvec2.html#a1c57b3fe8179737266104a37f2699569">vec2::operator+</a></div><div class="ttdeci">vec2 operator+(const vec2 &amp;other) const</div><div class="ttdoc">Sobrecarga do operador de adiÁ„o.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00015">matvec.cpp:15</a></div></div>
+<div class="ttc" id="aclassvec2_html_a77fdb4dc52f8736f49db0cbea2ea8739"><div class="ttname"><a href="classvec2.html#a77fdb4dc52f8736f49db0cbea2ea8739">vec2::operator-</a></div><div class="ttdeci">vec2 operator-(const vec2 &amp;other) const</div><div class="ttdoc">Sobrecarga do operador de subtraÁ„o.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00020">matvec.cpp:20</a></div></div>
+<div class="ttc" id="aclassvec2_html_a7dd96b09b79aa0442f7066e163687769"><div class="ttname"><a href="classvec2.html#a7dd96b09b79aa0442f7066e163687769">vec2::operator/</a></div><div class="ttdeci">vec2 operator/(double scalar) const</div><div class="ttdoc">Sobrecarga do operador de divis„o por escalar.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00035">matvec.cpp:35</a></div></div>
+<div class="ttc" id="aclassvec2_html_ae12a1a221eca3561809600a11b58eaa3"><div class="ttname"><a href="classvec2.html#ae12a1a221eca3561809600a11b58eaa3">vec2::vec2</a></div><div class="ttdeci">vec2()</div><div class="ttdoc">Construtor padr„o.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00009">matvec.cpp:9</a></div></div>
+<div class="ttc" id="aclassvec2_html_ae30b6dfb3feb9aa9d6051fdb3b50ea90"><div class="ttname"><a href="classvec2.html#ae30b6dfb3feb9aa9d6051fdb3b50ea90">vec2::length</a></div><div class="ttdeci">double length() const</div><div class="ttdoc">Calcula o comprimento do vetor.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00043">matvec.cpp:43</a></div></div>
+<div class="ttc" id="aclassvec3_html"><div class="ttname"><a href="classvec3.html">vec3</a></div><div class="ttdoc">Classe que representa um vetor 3D.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8h_source.html#l00066">matvec.h:66</a></div></div>
+<div class="ttc" id="aclassvec3_html_a0f4ba73a2ffc2f4166b89be9e874c2d0"><div class="ttname"><a href="classvec3.html#a0f4ba73a2ffc2f4166b89be9e874c2d0">vec3::operator+</a></div><div class="ttdeci">vec3 operator+(const vec3 &amp;other) const</div><div class="ttdoc">Sobrecarga do operador de adiÁ„o.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00056">matvec.cpp:56</a></div></div>
+<div class="ttc" id="aclassvec3_html_a118a478840f2f3cc9c623dd2443c218f"><div class="ttname"><a href="classvec3.html#a118a478840f2f3cc9c623dd2443c218f">vec3::operator/</a></div><div class="ttdeci">vec3 operator/(double scalar) const</div><div class="ttdoc">Sobrecarga do operador de divis„o por escalar.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00071">matvec.cpp:71</a></div></div>
+<div class="ttc" id="aclassvec3_html_a1be4d540a0eef0cc388b6b0a23021ca4"><div class="ttname"><a href="classvec3.html#a1be4d540a0eef0cc388b6b0a23021ca4">vec3::length_squared</a></div><div class="ttdeci">double length_squared() const</div><div class="ttdoc">Calcula o comprimento do vetor ao quadrado.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00083">matvec.cpp:83</a></div></div>
+<div class="ttc" id="aclassvec3_html_a3113f5f52253753d0a37aa8972b23f52"><div class="ttname"><a href="classvec3.html#a3113f5f52253753d0a37aa8972b23f52">vec3::near_zero</a></div><div class="ttdeci">bool near_zero() const</div><div class="ttdoc">Verifica se o vetor È aproximadamente zero.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00087">matvec.cpp:87</a></div></div>
+<div class="ttc" id="aclassvec3_html_a5d54726a6e5ea2a66ba687fe5d4b1c9a"><div class="ttname"><a href="classvec3.html#a5d54726a6e5ea2a66ba687fe5d4b1c9a">vec3::length</a></div><div class="ttdeci">double length() const</div><div class="ttdoc">Calcula o comprimento do vetor.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00079">matvec.cpp:79</a></div></div>
+<div class="ttc" id="aclassvec3_html_aa8ca9de7c1ab45b661f04c2dda66febf"><div class="ttname"><a href="classvec3.html#aa8ca9de7c1ab45b661f04c2dda66febf">vec3::operator*</a></div><div class="ttdeci">vec3 operator*(double scalar) const</div><div class="ttdoc">Sobrecarga do operador de multiplicaÁ„o por escalar.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00093">matvec.cpp:93</a></div></div>
+<div class="ttc" id="aclassvec3_html_ae5b4bddd119d41f0373705fb03a74cdd"><div class="ttname"><a href="classvec3.html#ae5b4bddd119d41f0373705fb03a74cdd">vec3::operator-</a></div><div class="ttdeci">vec3 operator-(const vec3 &amp;other) const</div><div class="ttdoc">Sobrecarga do operador de subtraÁ„o.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00061">matvec.cpp:61</a></div></div>
+<div class="ttc" id="aclassvec3_html_aea9f3480a6ccd7ce3ab02d0992705d33"><div class="ttname"><a href="classvec3.html#aea9f3480a6ccd7ce3ab02d0992705d33">vec3::vec3</a></div><div class="ttdeci">vec3()</div><div class="ttdoc">Construtor padr„o.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00050">matvec.cpp:50</a></div></div>
+<div class="ttc" id="aclassvec4_html"><div class="ttname"><a href="classvec4.html">vec4</a></div><div class="ttdoc">Classe que representa um vetor 4D.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8h_source.html#l00177">matvec.h:177</a></div></div>
+<div class="ttc" id="aclassvec4_html_a017cc848924507800c42628e3c2c6ab3"><div class="ttname"><a href="classvec4.html#a017cc848924507800c42628e3c2c6ab3">vec4::operator+</a></div><div class="ttdeci">vec4 operator+(const vec4 &amp;other) const</div><div class="ttdoc">Sobrecarga do operador de adiÁ„o.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00173">matvec.cpp:173</a></div></div>
+<div class="ttc" id="aclassvec4_html_a397fed78ff70717abf03a757cd34793b"><div class="ttname"><a href="classvec4.html#a397fed78ff70717abf03a757cd34793b">vec4::operator/</a></div><div class="ttdeci">vec4 operator/(double scalar) const</div><div class="ttdoc">Sobrecarga do operador de divis„o por escalar.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00193">matvec.cpp:193</a></div></div>
+<div class="ttc" id="aclassvec4_html_a55e485d22f9ee137f383304b962489b1"><div class="ttname"><a href="classvec4.html#a55e485d22f9ee137f383304b962489b1">vec4::length</a></div><div class="ttdeci">double length() const</div><div class="ttdoc">Calcula o comprimento do vetor.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00201">matvec.cpp:201</a></div></div>
+<div class="ttc" id="aclassvec4_html_a61918909e2a1d30ff69ccfee37d40d30"><div class="ttname"><a href="classvec4.html#a61918909e2a1d30ff69ccfee37d40d30">vec4::operator-</a></div><div class="ttdeci">vec4 operator-(const vec4 &amp;other) const</div><div class="ttdoc">Sobrecarga do operador de subtraÁ„o.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00178">matvec.cpp:178</a></div></div>
+<div class="ttc" id="aclassvec4_html_a669c42363ef915565141c41218b1826a"><div class="ttname"><a href="classvec4.html#a669c42363ef915565141c41218b1826a">vec4::operator*</a></div><div class="ttdeci">double operator*(const vec4 &amp;other) const</div><div class="ttdoc">Sobrecarga do operador de produto escalar.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00183">matvec.cpp:183</a></div></div>
+<div class="ttc" id="aclassvec4_html_aa29685cf2528dae6ad7d74a7e01c1d6f"><div class="ttname"><a href="classvec4.html#aa29685cf2528dae6ad7d74a7e01c1d6f">vec4::vec4</a></div><div class="ttdeci">vec4()</div><div class="ttdoc">Construtor padr„o.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00167">matvec.cpp:167</a></div></div>
+<div class="ttc" id="amatvec_8h_html_a25997d9bc8a3a0187abd63f590efe4dd"><div class="ttname"><a href="matvec_8h.html#a25997d9bc8a3a0187abd63f590efe4dd">reflect</a></div><div class="ttdeci">vec3 reflect(const vec3 &amp;v, const vec3 &amp;n)</div><div class="ttdoc">Reflete um vetor em relaÁ„o a uma normal.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00355">matvec.cpp:355</a></div></div>
+<div class="ttc" id="amatvec_8h_html_a3f23fb03258dd44e8cb410f0a030c76e"><div class="ttname"><a href="matvec_8h.html#a3f23fb03258dd44e8cb410f0a030c76e">random_in_unit_sphere</a></div><div class="ttdeci">vec3 random_in_unit_sphere()</div><div class="ttdoc">Gera um vetor 3D aleatÛrio dentro de uma esfera unit·ria.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00343">matvec.cpp:343</a></div></div>
+<div class="ttc" id="amatvec_8h_html_a6ddfc6a69c41d9afa45a5fa7a23ded73"><div class="ttname"><a href="matvec_8h.html#a6ddfc6a69c41d9afa45a5fa7a23ded73">operator*</a></div><div class="ttdeci">vec3 operator*(double scalar, const vec3 &amp;v)</div><div class="ttdoc">Implementa a multiplicaÁ„o de vetor 3D por escalar.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00102">matvec.cpp:102</a></div></div>
+<div class="ttc" id="amatvec_8h_html_a7138f7ab204cf8d71168aadc80ac2561"><div class="ttname"><a href="matvec_8h.html#a7138f7ab204cf8d71168aadc80ac2561">unit_vector</a></div><div class="ttdeci">vec3 unit_vector(const vec3 &amp;v)</div><div class="ttdoc">Implementa a normalizaÁ„o de um vetor 3D.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00123">matvec.cpp:123</a></div></div>
+<div class="ttc" id="amatvec_8h_html_a85842ddb0f64a09b09c898626da3dc99"><div class="ttname"><a href="matvec_8h.html#a85842ddb0f64a09b09c898626da3dc99">refract</a></div><div class="ttdeci">vec3 refract(const vec3 &amp;uv, const vec3 &amp;n, double etai_over_etat)</div><div class="ttdoc">Refrata um vetor atravÈs de uma superfÌcie com Ìndices de refraÁ„o especificados.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00359">matvec.cpp:359</a></div></div>
+<div class="ttc" id="amatvec_8h_html_a98b7c682bb6ace85fb747cd2f14db72b"><div class="ttname"><a href="matvec_8h.html#a98b7c682bb6ace85fb747cd2f14db72b">random_double</a></div><div class="ttdeci">double random_double()</div><div class="ttdoc">Gera um n˙mero aleatÛrio no intervalo [0, 1).</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00310">matvec.cpp:310</a></div></div>
+<div class="ttc" id="amatvec_8h_html_aa738db3c021b4114e34124a45cf117f5"><div class="ttname"><a href="matvec_8h.html#aa738db3c021b4114e34124a45cf117f5">operator/</a></div><div class="ttdeci">vec3 operator/(double scalar, const vec3 &amp;v)</div><div class="ttdoc">Implementa a divis„o de escalar por vetor 3D.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00115">matvec.cpp:115</a></div></div>
+<div class="ttc" id="amatvec_8h_html_ab5889dcdb0ad1241997e5f127e5c8809"><div class="ttname"><a href="matvec_8h.html#ab5889dcdb0ad1241997e5f127e5c8809">cross</a></div><div class="ttdeci">vec3 cross(const vec3 &amp;v1, const vec3 &amp;v2)</div><div class="ttdoc">Implementa o produto vetorial de dois vetores 3D.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00128">matvec.cpp:128</a></div></div>
+<div class="ttc" id="amatvec_8h_html_abc3b6874dbb4b1cde526f10bc28b7486"><div class="ttname"><a href="matvec_8h.html#abc3b6874dbb4b1cde526f10bc28b7486">dot</a></div><div class="ttdeci">double dot(const vec3 &amp;v1, const vec3 &amp;v2)</div><div class="ttdoc">Implementa o produto escalar de dois vetores 3D.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00137">matvec.cpp:137</a></div></div>
+<div class="ttc" id="amatvec_8h_html_ad57f6a85dd0416a336c6d6bbbfdf5441"><div class="ttname"><a href="matvec_8h.html#ad57f6a85dd0416a336c6d6bbbfdf5441">operator-</a></div><div class="ttdeci">vec3 operator-(const vec3 &amp;v)</div><div class="ttdoc">Sobrecarga do operador de subtraÁ„o para vetores 3D.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00109">matvec.cpp:109</a></div></div>
+<div class="ttc" id="amatvec_8h_html_ada1a3d344d1bceea9aeb12a0dc83a805"><div class="ttname"><a href="matvec_8h.html#ada1a3d344d1bceea9aeb12a0dc83a805">random_unit_vector</a></div><div class="ttdeci">vec3 random_unit_vector()</div><div class="ttdoc">Gera um vetor 3D aleatÛrio com comprimento unit·rio.</div><div class="ttdef"><b>Defini√ß√£o</b> <a href="matvec_8cpp_source.html#l00351">matvec.cpp:351</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="matvec_8h.html">matvec.h</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

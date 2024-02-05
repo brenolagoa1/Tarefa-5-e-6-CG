@@ -1,0 +1,26 @@
+var files_dup =
+[
+    [ "Camera.h", "_camera_8h_source.html", null ],
+    [ "CImg.h", "_c_img_8h_source.html", null ],
+    [ "Color.cpp", "_color_8cpp_source.html", null ],
+    [ "Color.h", "_color_8h_source.html", null ],
+    [ "Face.h", "_face_8h_source.html", null ],
+    [ "hittable.h", "hittable_8h_source.html", null ],
+    [ "hittable_list.h", "hittable__list_8h_source.html", null ],
+    [ "Interval.cpp", "_interval_8cpp_source.html", null ],
+    [ "Interval.h", "_interval_8h_source.html", null ],
+    [ "material.cpp", "material_8cpp_source.html", null ],
+    [ "material.h", "material_8h_source.html", null ],
+    [ "matvec.cpp", "matvec_8cpp_source.html", null ],
+    [ "matvec.h", "matvec_8h.html", "matvec_8h" ],
+    [ "Normais.h", "_normais_8h_source.html", null ],
+    [ "Objeto.cpp", "_objeto_8cpp_source.html", null ],
+    [ "Objeto.h", "_objeto_8h_source.html", null ],
+    [ "Ray.cpp", "_ray_8cpp_source.html", null ],
+    [ "Ray.h", "_ray_8h_source.html", null ],
+    [ "rtweekend.h", "rtweekend_8h_source.html", null ],
+    [ "sphere.h", "sphere_8h_source.html", null ],
+    [ "Tarefa5.cpp", "_tarefa5_8cpp_source.html", null ],
+    [ "Tarefa5.h", "_tarefa5_8h_source.html", null ],
+    [ "Triangulo.h", "_triangulo_8h_source.html", null ]
+];

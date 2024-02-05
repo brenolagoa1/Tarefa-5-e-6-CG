@@ -1,0 +1,11 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: O diretório intermediário (x64\Debug\) contém arquivos compartilhados de outro projeto (tarefa4.vcxproj). Isso pode levar a um comportamento incorreto de limpeza e recompilação.
+  Color.cpp
+  Interval.cpp
+  Ray.cpp
+  Tarefa5.cpp
+C:\Users\lagoa\source\repos\tarefa4\Tarefa5.cpp(60,121): warning C4305: 'argumento': truncamento de 'double' para 'float'
+C:\Users\lagoa\source\repos\tarefa4\Tarefa5.cpp(61,129): warning C4305: 'argumento': truncamento de 'double' para 'float'
+  matvec.cpp
+  Gerando Código...
+LINK : warning LNK4044: opção não reconhecida '/openmp'; ignorada
+  tarefa4.vcxproj -> C:\Users\lagoa\source\repos\tarefa4\x64\Debug\Tarefa5.exe
